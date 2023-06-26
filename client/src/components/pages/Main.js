@@ -11,7 +11,7 @@ const Recommended = lazy(() => import('../recommended/Recommended.js'));
 const Main = () => {
 
     const [showRecom, setShowRecom] = useState(false);
-
+    console.log('test');
     const scrollHandler = () => {
         const a = document.documentElement.scrollTop;
         const latest = document.querySelector('.app-latest');
