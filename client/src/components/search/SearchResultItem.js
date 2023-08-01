@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import './searchResultItem.scss';
-import store from '../../store/store';
 
 const SearchResultItem = ({title, url, urlToImage, author, description, date}) => {
     return (

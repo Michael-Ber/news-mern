@@ -18,16 +18,14 @@ app.use(cors());
 app.use('/', newsRouter);
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3005;
 const DB_NAME = process.env.DB_NAME;
 
-const MongoClient = mongodb.MongoClient;
-const client = new MongoClient('mongodb://localhost:27017');
 
 
 async function start() {
     try {
-        await mongoose.connect(`mongodb://localhost:27017/${DB_NAME}`);
+        // await mongoose.connect(`mongodb+srv://${process.env.mongoUser}@clusterzlatmax.kdrp7zk.mongodb.net/${DB_NAME}`);
         app.listen(PORT, () => console.log(`Connection to server on port: ${PORT}`))
     } catch (error) {
         console.log(error)

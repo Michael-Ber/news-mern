@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './search.scss';
 import searchIcon from '../../assets/search.svg';
-import { fetchSearchNews, searchRequestChanged } from '../news/NewsSlice';
+import { searchRequestChanged } from '../news/NewsSlice';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../spinner/Spinner';
 
@@ -19,7 +19,8 @@ const Search = () => {
         dispatch(searchRequestChanged(request));
         localStorage.setItem('searchRequest', request);
         setRequest('');
-        nav(`/search_results`)
+        nav(`/search_results`);
+        setShowResultsResolution(true);
     }
 
     const showSpinner = loadingStatus === 'loading' ? <Spinner customStyle={{position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '20px', height: '20px'}} /> : null;

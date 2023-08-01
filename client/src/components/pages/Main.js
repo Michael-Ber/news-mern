@@ -14,7 +14,7 @@ const Main = () => {
     const scrollHandler = () => {
         const a = document.documentElement.scrollTop;
         const latest = document.querySelector('.app-latest');
-        const bottomOfSection = latest.offsetTop - window.innerHeight + latest.clientHeight;
+        const bottomOfSection = latest?.offsetTop - window.innerHeight + latest?.clientHeight;
         if(a >= bottomOfSection) {
             setShowRecom(true);
         }else {

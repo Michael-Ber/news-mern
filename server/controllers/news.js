@@ -3,6 +3,7 @@ import axios from "axios";
 const apiKey = '7c5bf92a51e04e629562b39598462ba4';
 
 export const getHeadlineNews = async(req, res) => {
+
     try {
         const { country, category, pageSize } = req.body;
         const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&pageSize=${pageSize}&apiKey=${apiKey}`;

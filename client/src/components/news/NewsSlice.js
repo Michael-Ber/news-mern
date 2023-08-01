@@ -35,7 +35,7 @@ export const fetchNews = createAsyncThunk(
 
 export const fetchSearchNews = createAsyncThunk(
     'news/fetchSearchNews',
-    async({category, language='ru'}) => {
+    async({category, language}) => {
         try {
             const { request } = useHttp();
             const { apiUrlEverything } = newsService({ category, language });
