@@ -8,8 +8,6 @@ import './app.scss';
 import Footer from "../footer/Footer";
 import Search from "../search/Search";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
-// import Main from "../pages/Main";
-// import SearchResult from "../pages/SearchResult";
 import Spinner from "../spinner/Spinner";
 
 const SearchResult = lazy(() => import('../pages/SearchResult.js'))

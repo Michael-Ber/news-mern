@@ -9,13 +9,14 @@ const initialState = {
     category: 'general',
     country: 'us',
     language: 'ru',
+    amount: 8,
     loadingStatus: 'idle',
     error: false
 };
 
 export const fetchNews = createAsyncThunk(
     'news/fetchNews',
-    async ({country, category, pageSize=100}) => {
+    async ({country, category, pageSize=8, page=1}) => {
         try {
             const { request } = useHttp();
             const { apiUrlHeadlines } = newsService();
@@ -24,7 +25,7 @@ export const fetchNews = createAsyncThunk(
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({country, category, pageSize})
+                body: JSON.stringify({country, category, pageSize, page})
             })
         } catch (error) {
             console.log(error)
@@ -59,7 +60,8 @@ const mainSlice = createSlice({
     reducers: {
         categoryChanged: (state, action) => {state.category = action.payload},
         countryChanged: (state, action) => {state.country = action.payload},
-        searchRequestChanged: (state, action) => {state.searchRequest = action.payload}
+        searchRequestChanged: (state, action) => {state.searchRequest = action.payload},
+        changeAmount: (state) => { state.amount += 8 }
     },
     extraReducers: builder => {
         builder 
@@ -84,5 +86,6 @@ export const {
     fetchingNewsError,
     fetchingSearchNews,
     fetchedSearchNEws,
-    fetchingSearchNEwsError
+    fetchingSearchNEwsError,
+    changeAmount
 } = actions;

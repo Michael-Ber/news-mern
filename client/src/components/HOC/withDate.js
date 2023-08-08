@@ -27,7 +27,6 @@ const withDate = (WrappedComponent, props) => {
         utcNowMinutes
     } = dateChangeToUTC(props.publishedAt);
 
-    console.log('utcmonth', utcDate, 'nowmonth', utcNowDate)
     const renderDate = () => {
         if(utcMonth !== utcNowMonth && utcDate < utcNowDate) {
             return <span className="item-app-latest__time">{(utcNowMonth - utcMonth) > 1 && utcNowMonth - utcMonth} {`${(utcNowMonth - utcMonth)>4 ? 'месяцев' : ((utcNowMonth - utcMonth)===1) ? 'месяц' :  'месяца'}`} назад</span>

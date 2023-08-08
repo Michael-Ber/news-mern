@@ -27,5 +27,8 @@
     &__more {
         display: block;
         margin: 100px auto 0 auto;
+        &:disabled {
+            background-color: darkgray;
+        }
     }
 }

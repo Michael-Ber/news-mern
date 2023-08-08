@@ -6,8 +6,7 @@ import Popular from "../popular/Popular";
 import './news.scss';
 
 const News = memo(() => {
-    const { country } = useSelector(state => state.news);
-    const { category } = useSelector(state => state.news);
+    const { country, category } = useSelector(state => state.news);
     const dispatch = useDispatch();
 
     useEffect(() => {
