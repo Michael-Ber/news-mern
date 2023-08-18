@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import './newsContent.scss';
 
 const NewsContent = ({category, title, url, date}) => {
   

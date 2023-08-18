@@ -1,5 +1,5 @@
 import { CSSTransition } from 'react-transition-group'
-import { Suspense, lazy, useEffect, useState, useRef } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 import Spinner from "../spinner/Spinner";
 

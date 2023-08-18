@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useRef, useEffect, useState } from "react";
 import './recommendedItem.scss';
 import noImage from '../../assets/no_image.jpg';
 

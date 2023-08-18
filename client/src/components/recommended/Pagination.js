@@ -34,9 +34,6 @@ const Pagination = ({totalPage, totalSlides, page, limit, siblings, setSlide, se
             if(prevOffset < 2 * translateWidth) {
                 svg.style.stroke = '#e0e0e0';
             }
-            // if(prevOffset < 3 * translateWidth) {
-            //     setSlide(1)
-            // }
             return prevOffset - translateWidth
         })
 

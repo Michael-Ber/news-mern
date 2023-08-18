@@ -1,5 +1,5 @@
 import withStoreData from '../HOC/withStoreData';
-import { useState, memo, useEffect, useRef } from 'react';
+import { useState, memo, useEffect } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import RecommendedItem from './RecommendedItem';
 import Pagination from './Pagination';
@@ -30,7 +30,6 @@ const Recommended = memo(({news, category}) => {
     const elements = news.length > 0 ? news.map((item, i) => {
         const RecommendedItemWithDate = withDate(RecommendedItem, {category, ...item});
         return (
-            // <RecommendedItem key={nanoid()} {...item} category={category} />
             <RecommendedItemWithDate key={nanoid()} />
         )
     }) : <h2>Статей нет</h2>

@@ -1,6 +1,6 @@
 import withStoreData from '../HOC/withStoreData';
 import { useState, memo, useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { useHttp } from "../hooks/http.hook";
 import { newsService } from "../../service/newsService";
