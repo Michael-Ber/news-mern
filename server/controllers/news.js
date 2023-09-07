@@ -20,9 +20,9 @@ export const getSearchedNews = async(req, res) => {
     try {
         const { category, language } = req.body;
         const URL = `https://newsapi.org/v2/everything?q=${category}&language=${language}&apiKey=${apiKey}`;
-
         const articles = await axios.get(URL);
-        return res.json({message: "Send OK", articles: articles.data.articles});
+        const articlesToClient = articles.data.articles.length !== 0 && articles.data.articles.filter(article => article.description !== "[Removed]").map(article => ({...article, id: uuidv4()}));
+        return res.json({message: "Send OK", articles: articlesToClient});
     } catch (error) {
         res.json({message: "Error while getting news"})
     }
