@@ -10,7 +10,7 @@ export const getHeadlineNews = async(req, res) => {
         const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&page=${page}&pageSize=${pageSize}&apiKey=${apiKey}`;
         const articles = await axios.get(URL);
         const articlesToClient = articles.data.articles.length !== 0 && articles.data.articles.filter(article => article.description !== "[Removed]").map(article => ({...article, id: uuidv4()}));
-        return res.json({message: "Send OK", articles: articlesToClient});
+        return res.json({message: "Send OK", articles: articlesToClient ? articlesToClient: []});
     } catch (error) {
         res.json({message: "Error while getting news",error})
     }
