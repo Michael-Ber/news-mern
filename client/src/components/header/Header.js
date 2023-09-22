@@ -147,11 +147,11 @@ const Header = () => {
                 </div>
                 <div ref={burgerContentRef} className="burger-app-header__content">
                     <ul className="burger-app-header__list">
-                        <div
+                        <li
                             onClick={closeBurgerMenu} 
                             className="burger-app-header__close">
                                 &#x2715;
-                        </div>
+                        </li>
                         {burgerItems}
                     </ul>
                 </div>
