@@ -4,8 +4,9 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-import newsRouter from "./routes/news.js";
 
+import newsRouter from "./routes/news.js";
+import testRouter from "./routes/test.js";
 
 const app = express();
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(cors());
 
 //ROUTES
 app.use('/', newsRouter);
+// app.use('/', testRouter)
 
 
 const PORT = process.env.PORT || 3005;

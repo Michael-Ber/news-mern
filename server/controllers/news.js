@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 const apiKey = '7c5bf92a51e04e629562b39598462ba4';
 
 export const getHeadlineNews = async (req, res) => {
-    console.log(req.params);
     try {
         const { country, category, pageSize, page } = req.body;
         const URL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&page=${page}&pageSize=${pageSize}&apiKey=${apiKey}`;
@@ -26,4 +25,12 @@ export const getSearchedNews = async (req, res) => {
     } catch (error) {
         res.json({ message: "Error while getting news" })
     }
-} 
+}
+
+export const getTest = async (req, res) => {
+    try {
+        console.log('testy');
+    } catch (error) {
+        console.log(error)
+    }
+}
