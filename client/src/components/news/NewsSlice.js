@@ -40,6 +40,7 @@ export const fetchSearchNews = createAsyncThunk(
     'news/fetchSearchNews',
     async ({ category, language }) => {
         try {
+
             const { request } = useHttp();
             const { apiUrlEverything } = newsService();
             return await request(apiUrlEverything, {
